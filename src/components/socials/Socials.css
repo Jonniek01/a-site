@@ -1,0 +1,19 @@
+.social-ul{
+    display: flex;
+    flex-direction: column;
+    font-size: 200%;
+    color: blue;
+    list-style: none;
+    align-items: center;
+    
+    }
+    .social-items li{
+        margin: 2px;
+    }
+ 
+    .social-ul a{
+        color: white;
+    }
+
+
+    

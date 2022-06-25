@@ -1,3 +1,23 @@
 .App {
+  height: auto;
+  width: 100vw;
   text-align: center;
+  background-color: blue;
+  padding: 5px;
+}
+.container{
+  width: 100%;
+background-color: blueviolet;
+}
+.heading{
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  color: white;
+}
+.arts-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(20,300px);
 }

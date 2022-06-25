@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Nav from './components/nav/Nav'
-import Main from './routes/main/main'
+import Main from './routes/main/Main'
 import About from './routes/about/About'
 import Account from './routes/account/Account'
 import Drawings from './routes/drawings/Drawings'
@@ -17,9 +17,10 @@ import SignupLogin from './routes/signupLogin/SignupLogin'
 function App() {
   return (
     <div className="App">
-      <h1>APP</h1>
       <Nav/>
-          <Routes>
+      <div className='container'>
+
+        <Routes>
         <Route path='/' element={<Main/>}></Route> 
         <Route path='/about' element={<About/>}></Route>
         <Route path='/account' element={<Account/>}></Route>
@@ -29,8 +30,8 @@ function App() {
         <Route path='/sculpture' element={<Sculpture/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
         <Route path='/signuplogin' element={<SignupLogin/>}></Route>
-
       </Routes>
+      </div>
 
     </div>
   );

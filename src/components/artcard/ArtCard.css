@@ -1,0 +1,70 @@
+.card-none{
+    display: none;
+}
+.card-show{
+    display: block;
+    color: white;
+    font-size: 120%;
+
+
+
+}
+.card-body{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw; 
+    background-color: rgb(5, 20, 90);
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(6,100px);
+    grid-template-areas: 
+    "five five five five five"
+
+    "one one one two two"
+    "one one one two two"
+    "one one one two two"
+    "three three three four four"
+    "three three three four four"
+   
+
+
+    ;
+
+}
+.card-close{
+    font-size: 200%;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    background-color: rgb(5, 20, 90);
+    cursor: pointer;
+
+}
+.card-close{
+    grid-area: five;
+}
+.art-image{
+    grid-area: one;
+    background-color: rgb(5, 20, 90);
+    overflow-y: scroll;
+
+}
+.art-social{
+    grid-area: two;
+    background-color: rgb(5, 20, 90);
+
+}
+.art-details{
+    grid-area: three;
+    background-color: rgb(5, 20, 90);
+    text-align: left;
+    padding-left: 20px;
+
+}
+.art-artist{
+    grid-area: four;
+    background-color: rgb(5, 20, 90);
+
+}

@@ -1,0 +1,28 @@
+.nav{
+    height: 15vh;
+    background-color: rgb(24, 54, 54);
+    background: 
+    url('https://images.pexels.com/photos/1109354/pexels-photo-1109354.jpeg?cs=srgb&dl=pexels-steve-johnson-1109354.jpg&fm=jpg');
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    align-items: center;
+    gap: 20px;
+    font-size: 120%;
+    font-weight: bold;
+
+    
+}
+.logo{
+    font-size: 120%;
+    font-weight: bold;
+}
+.links{
+    display: flex;
+    gap: 20px;
+
+}
+.link{
+    color: white;
+    text-decoration: none;
+}
