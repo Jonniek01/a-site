@@ -7,7 +7,6 @@
 }
 .container{
   width: 100%;
-background-color: blueviolet;
 }
 .heading{
   text-align: left;
@@ -19,5 +18,5 @@ background-color: blueviolet;
 .arts-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(20,300px);
+  grid-template-rows: repeat(auto,500px);
 }

@@ -9,12 +9,25 @@ import Drawings from './routes/drawings/Drawings'
 import Login from './routes/login/Login'
 import Paintings from './routes/paintaings/Paintaings'
 import Sculpture from './routes/sculpture/Sculpture'
-import SignUp from './routes/signUp/signUp'
+import SignUp from './routes/signUp/SignUp'
 import SignupLogin from './routes/signupLogin/SignupLogin'
+import { useEffect, useState } from 'react';
 
 //GET https://artpromotion.azurewebsites.net/api/Art
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [user, setUser] = useState('')
+  useEffect(
+    ()=>{
+      const loggedInUser = localStorage.getItem("user");
+      if (loggedInUser) {
+        const foundUser = JSON.parse(loggedInUser);
+        setLoggedIn(true);
+        setUser( foundUser)
+      }
+    },[loggedIn]
+  )
   return (
     <div className="App">
       <Nav/>
@@ -23,9 +36,9 @@ function App() {
         <Routes>
         <Route path='/' element={<Main/>}></Route> 
         <Route path='/about' element={<About/>}></Route>
-        <Route path='/account' element={<Account/>}></Route>
+        <Route path='/account' element={loggedIn?<Account user={user}/>:<SignupLogin/>}></Route>
         <Route path='/drawings' element={<Drawings/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/login' element={<Login setLoggedIn={setLoggedIn}/>}></Route>
         <Route path='/paintings' element={<Paintings/>}></Route>
         <Route path='/sculpture' element={<Sculpture/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
