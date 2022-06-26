@@ -1,5 +1,12 @@
-.ard-card{
+.art-card .image{
     cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -webkit-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -moz-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);}
+.art-card .image:hover{
+    cursor: pointer;
+    opacity: 0.8;
 }
 .card-none{
     display: none;

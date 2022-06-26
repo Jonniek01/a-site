@@ -1,0 +1,86 @@
+.add-none{
+    display: none;
+
+}
+
+.add-item{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.774);
+}
+.add-item form{
+    background-color: rgb(218, 240, 240);
+    top: 25vh;
+    left: 25vw;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.close-add{
+    width: 100%;
+    text-align: left;
+    margin-left: 20%;
+    padding: 1%;
+    color: rgb(128, 10, 55);
+    font-size: 150%;
+    cursor: pointer;
+
+}
+.add-heading{
+    color: rgb(128, 10, 55);
+    font-weight: bold;
+    font-size: 120%;
+}
+.add-item form{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 5%;
+    align-items: center;
+    height: 70%;
+
+    
+
+
+}
+.add-item form div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.add-item input{
+    padding: 0.5%;
+    outline: none;
+    border: 0;
+    height: 35px;
+    width: 48%;
+}
+.add-item textarea{
+    padding: 0.5%;
+
+    background-color: rgba(255, 0, 64, 0.151);
+    outline: none;
+    border: 0;
+
+
+    width: 100%;
+}
+
+.add-item .submit{
+    width: 50%;
+    
+        padding: 1% 2% 1% 2%;
+        cursor: pointer;
+    
+}

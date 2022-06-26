@@ -1,0 +1,37 @@
+.account{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 120%;
+}
+.user-details{
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+}
+.profile-image{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: aliceblue;
+}
+.details{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.acc-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+button{
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -webkit-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -moz-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+
+}

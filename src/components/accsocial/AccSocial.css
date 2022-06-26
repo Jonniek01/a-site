@@ -1,0 +1,30 @@
+.acc-social{
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+    align-items: center;
+}
+.acc-ul{
+    list-style: none;
+
+}
+.acc-social a{
+    color: white;
+    text-decoration: none;
+}
+.social-edit{
+    font-size: 50%;
+    cursor: pointer;
+    transition: all 0.5;
+    background-color: inherit;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -webkit-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -moz-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+}
+
+
+.social-edit:hover{
+    opacity: 0.8;
+}

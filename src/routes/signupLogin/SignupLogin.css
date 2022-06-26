@@ -1,10 +1,18 @@
 .signup-login{
+    position: fixed;
+    top: 0;
+    left: 0;
+
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: 
+    url('https://images.pexels.com/photos/1109354/pexels-photo-1109354.jpeg?cs=srgb&dl=pexels-steve-johnson-1109354.jpg&fm=jpg');
+    background-size: cover;
+  
 }
 .sl-content{
     
@@ -15,9 +23,8 @@
     flex-direction: column;
     gap: 20%;
     padding-top: 5%;
-    /* justify-content: center; */
     align-items: center;
-    background-color: #4F79E7;
+    background-color: rgb(30, 84, 219);
 }
 .sl-head{
     color: white;

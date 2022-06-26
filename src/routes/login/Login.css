@@ -1,10 +1,16 @@
 .log-in{
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height:100vh ;
     display: flex;
     justify-content: center;
-    background-color: #385BB4;
     align-items: center;
+    background: 
+    url('https://images.pexels.com/photos/1109354/pexels-photo-1109354.jpeg?cs=srgb&dl=pexels-steve-johnson-1109354.jpg&fm=jpg');
+    background-size: cover;
+  
 }
 .log-in form{
     width: 30%;

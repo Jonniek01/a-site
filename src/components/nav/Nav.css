@@ -25,4 +25,11 @@
 .link{
     color: white;
     text-decoration: none;
+    transition: all 0.5s;
+}
+.link:hover{
+    opacity: 0.3;
+}
+.link:active{
+    color: blue;
 }

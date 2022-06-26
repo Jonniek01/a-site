@@ -1,0 +1,12 @@
+.acc-art {
+    background-color: blue;
+    padding: 10px;
+    box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -webkit-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -moz-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    transition: all 0.5s;
+}
+.acc-art:hover{
+    opacity: 0.8;
+
+}
