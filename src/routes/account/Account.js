@@ -63,7 +63,7 @@ function Account({user}) {
       </div>
       <div className={addClass}>
         <div className="close-add"><p onClick={()=>{setAddClass('add-none')}} >X</p></div>
-        <AddItem/>
+        <AddItem uid={user.id}/>
         
       </div>
     </div>

@@ -16,7 +16,6 @@ function ArtCard({art}) {
 
  const getArtist=()=>{
     axios.get(`${artist_url}${artistId}`).then(res=>setArtist(res.data)).catch(er=>setErr(er));
-    console.log(artist)
 
   }
   return (

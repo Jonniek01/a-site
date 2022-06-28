@@ -5,15 +5,14 @@ import { useState } from 'react';
 import axios from 'axios';
 
 
-function AddItem() {
-  const userId="from local storage"
+function AddItem({uid}) {
   const initialValues = {
       "name": "",
       "description": "",
-      "artistId": userId,
+      "artistId": uid,
       "price": 0,
       "category": "",
-      "imageUrl":""
+      "artImageUrl":""
  
 };
 const url = "https://artpromotion.azurewebsites.net/api/Art"
@@ -38,6 +37,7 @@ const handleSubmit=(e)=>{
   setDisabled(true)
   
   
+  
       setMessage("Form proccessing");
       if(!image){
         setMessage("Image can not be empty, try again");
@@ -53,13 +53,14 @@ const handleSubmit=(e)=>{
 //posting data
 const postData=(s3url)=>{
   let Obj=values;
-  Obj.imageUrl=s3url;
+  Obj.artImageUrl=s3url;
   setValues(Obj)
   console.log("to be submited:", values)
   axios.post(url,values).then(
-    res=>{console.log("response", res.data);
+    res=>{
     setDisabled(false);
-    res.data.isSuccess?setMessage(res.data.message):setMessage(res.data.errors.toString())
+    setMessage("PRODUCT ADDED SUCCESFULLY");
+    setValues(initialValues)
 
   })
   .catch(err=>{
@@ -98,7 +99,17 @@ const uploadImage=(secureUrl)=>{
 
       <div>
         <input onChange={handleInputChange} name="name" placeholder='name' type="text"></input>
-        <input onChange={handleInputChange} name="category" placeholder='category' type="text"></input>
+        <div className='form-cat'>
+          <span>Category:</span>
+
+        <select onChange={handleInputChange} name="category" placeholder='category' type="text">
+          <option value="Drawings">Drawings</option>
+          <option value="Sculpture">Sculpture</option>
+          <option value="Paintings">Paintings</option>
+
+        </select>
+        </div>
+
 
       </div>
       <div>
