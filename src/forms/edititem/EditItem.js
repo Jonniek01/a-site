@@ -40,7 +40,7 @@ const handleSubmit=(e)=>{
   
       setMessage("Form proccessing");
       if(!image){
-       postData(values.artImageUrl)
+       postData(initialValues.artImageUrl)
       }
       else{
         getSecure()

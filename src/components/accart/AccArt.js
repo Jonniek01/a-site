@@ -1,8 +1,24 @@
 import React, { useState } from 'react'
 import './AccArt.css'
+import axios from 'axios'
 import EditItem from '../../forms/edititem/EditItem'
+
+//Delete https://artpromo.azurewebsites.net/api/Art/
 function AccArt({art}) {
 const [edit, setEdit]=useState('edit-none')
+const url=`https://artpromo.azurewebsites.net/api/Art/${art.id}`
+
+
+  const remove=()=>{
+    axios.delete(url).then(res=>{
+      console.log(res)
+
+    })
+    .catch(err=>{
+      console.log(err)
+
+    })
+  }
   return (
     <div className='acc-art' >
       <img className='image' src={art.artImageUrl} alt={art.name}></img>
@@ -13,7 +29,7 @@ const [edit, setEdit]=useState('edit-none')
 
       </div>
       <div className="buttons">
-        <button onClick={()=>{setEdit('edit-item')}} >EDIT DETAILS</button><button>REMOVE</button>
+        <button onClick={()=>{setEdit('edit-item')}} >EDIT DETAILS</button><button onClick={()=>remove(url)} >REMOVE</button>
       </div>
       <div className={edit}>
       <div className="close-add"><p onClick={()=>{setEdit('edit-none')}} >X</p></div>
