@@ -3,7 +3,7 @@ import axios from 'axios';
 import './EditAccount.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-//PUT https://artpromotion.azurewebsites.net/api/Artists/3fa85f64-5717-4562-b3fc-2c963f66afa6
+//PUT https://artpromo.azurewebsites.net/api/Artists/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 function EditAccount({user}) {
   const initialValues = {
@@ -17,7 +17,7 @@ function EditAccount({user}) {
     "address": user.address,
     "artistImageUrl": user.artistImageUrl
 };
-const url = ` https://artpromotion.azurewebsites.net/api/Artists/${user.id}`
+const url = ` https://artpromo.azurewebsites.net/api/Artists/${user.id}`
 
 const [values, setValues] = useState(initialValues);
 const [message, setMessage]=useState("")
@@ -76,6 +76,8 @@ const putData=(s3url)=>{
     res=>{
     setDisabled(false);
     setMessage("PRODUCT ADDED SUCCESFULLY");
+    localStorage.setItem('user', JSON.stringify(values))
+
     setValues(initialValues)
 
   })
@@ -92,6 +94,8 @@ const putData=(s3url)=>{
 
     <form onSubmit={(e)=>{handleSubmit(e)}}>
       <h2>UPDATE ACCOUNT</h2>
+      <div className='message'>{message}</div>
+
       <div>
         <input onChange={handleInputChange} value={values.name} name='name' type="text" placeholder="Name" ></input>
         <input onChange={handleInputChange} value={values.brand} name='brand' type="text" placeholder="Brand" ></input>

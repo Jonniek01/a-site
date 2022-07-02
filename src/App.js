@@ -13,7 +13,7 @@ import SignUp from './routes/signUp/SignUp'
 import SignupLogin from './routes/signupLogin/SignupLogin'
 import { useEffect, useState } from 'react';
 
-//GET https://artpromotion.azurewebsites.net/api/Art
+//GET https://artpromo.azurewebsites.net/api/Art
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)

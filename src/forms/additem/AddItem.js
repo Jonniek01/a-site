@@ -1,4 +1,4 @@
-//post https://artpromotion.azurewebsites.net/api/Art
+//post https://artpromo.azurewebsites.net/api/Art
 import React from 'react'
 import './AddItem.css'
 import { useState } from 'react';
@@ -15,7 +15,7 @@ function AddItem({uid}) {
       "artImageUrl":""
  
 };
-const url = "https://artpromotion.azurewebsites.net/api/Art"
+const url = "https://artpromo.azurewebsites.net/api/Art"
 
 const [values, setValues] = useState(initialValues);
 const [message, setMessage]=useState("")

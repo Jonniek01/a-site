@@ -8,7 +8,7 @@ import './Account.css'
 import AddItem from '../../forms/additem/AddItem'
 import EditAccount from '../../forms/editaccount/EditAccount'
 
-const url="https://artpromotion.azurewebsites.net/api/Art/artist/"
+const url="https://artpromo.azurewebsites.net/api/Art/artist/"
 function Account({user}) {
   const [arts,setArts] = useState([])
   const [err,setErr]= useState(null)
@@ -17,12 +17,12 @@ function Account({user}) {
   useEffect(
     ()=>{
       axios.get(`${url}${user.id}`).then(res=>setArts(res.data)).catch(er=>setErr(er))
-    }
+    },[user]
   )
   return (
     <div className='account'>
       <div className='user-details'>
-        <img src={user.artistImageUr} alt={user.brand} className="profile-image" ></img>
+        <img src={user.artistImageUrl} alt={user.brand} className="profile-image" ></img>
         <div className="details">
           <div className="brand">
             <span>BRAND: </span><span>{user.brand}</span>

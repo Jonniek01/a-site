@@ -3,8 +3,8 @@ import axios from 'axios'
 
 import ArtCard from '../../components/artcard/ArtCard'
 
-//GET https://artpromotion.azurewebsites.net/api/Art/category/Drawings
-const url="https://artpromotion.azurewebsites.net/api/Art/category/Drawings"
+//GET https://artpromo.azurewebsites.net/api/Art/category/Drawings
+const url="https://artpromo.azurewebsites.net/api/Art/category/Drawings"
 
 function Drawings() {
   const [arts,setArts] = useState(null)

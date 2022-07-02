@@ -1,4 +1,4 @@
-/* POST https://artpromotion.azurewebsites.net/api/Auth/login
+/* POST https://artpromo.azurewebsites.net/api/Auth/login
 {
   "email": "user@example.com",
   "password": "stringst"
@@ -16,7 +16,7 @@ function Login({setLoggedIn}) {
     email:"",
     password:""
   };
-  const url = "https://artpromotion.azurewebsites.net/api/Auth/login"
+  const url = "https://artpromo.azurewebsites.net/api/Auth/login"
 
   const [values, setValues] = useState(initialValues);
   const [message, setMessage]=useState("")
@@ -51,7 +51,7 @@ const handleSubmit=(e)=>{
 
 const setUser=(response)=>{
   
-  axios.get(`https://artpromotion.azurewebsites.net/api/Artists/${response.userId}`).then(
+  axios.get(`https://artpromo.azurewebsites.net/api/Artists/${response.userId}`).then(
     res=>{localStorage.setItem('user', JSON.stringify(res.data));setLoggedIn(true);navigate('/account')}
   ).catch(err=>setMessage(err))
 }

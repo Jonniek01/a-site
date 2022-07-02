@@ -18,7 +18,7 @@ function SignUp() {
       "password": "",
       "cpassword":""
   };
-  const url = "https://artpromotion.azurewebsites.net/api/Auth/register"
+  const url = "https://artpromo.azurewebsites.net/api/Auth/register"
 
   const [values, setValues] = useState(initialValues);
   const [message, setMessage]=useState("")

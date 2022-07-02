@@ -1,8 +1,8 @@
 import axios from 'axios'
 import ArtCard from '../../components/artcard/ArtCard'
 import React, { useEffect, useState } from 'react'
-//GET https://artpromotion.azurewebsites.net/api/Art
-const url="https://artpromotion.azurewebsites.net/api/Art"
+//GET https://artpromo.azurewebsites.net/api/Art
+const url="https://artpromo.azurewebsites.net/api/Art"
 function Main() {
   const [arts,setArts] = useState(null)
   const [err,setErr]= useState(null)

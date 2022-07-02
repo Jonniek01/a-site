@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Socials from '../socials/Socials'
 import './ArtCard.css'
-// const item_url="https://artpromotion.azurewebsites.net/api/Art/"
-const artist_url="https://artpromotion.azurewebsites.net/api/Artists/"
+// const item_url="https://artpromo.azurewebsites.net/api/Art/"
+const artist_url="https://artpromo.azurewebsites.net/api/Artists/"
 
 function ArtCard({art}) {
   const artistId=art.artistId
