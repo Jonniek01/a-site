@@ -35,3 +35,6 @@ button{
     -moz-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
 
 }
+.edit-none{
+    display: none;
+}

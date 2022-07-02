@@ -64,7 +64,7 @@ const postData=(s3url)=>{
 
   })
   .catch(err=>{
-    setMessage("An error occured,check your internet and try again");
+    setMessage("An error occured. Check your art details");
     console.log("error",err)
     setDisabled(false)
   })
@@ -102,7 +102,9 @@ const uploadImage=(secureUrl)=>{
         <div className='form-cat'>
           <span>Category:</span>
 
-        <select onChange={handleInputChange} name="category" placeholder='category' type="text">
+        <select onChange={handleInputChange} name="category" placeholder='category' type="text" required>
+        <option >SELECT ONE</option>
+
           <option value="Drawings">Drawings</option>
           <option value="Sculpture">Sculpture</option>
           <option value="Paintings">Paintings</option>

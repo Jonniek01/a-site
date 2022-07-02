@@ -6,12 +6,14 @@ import AccArt from '../../components/accart/AccArt'
 import axios from 'axios'
 import './Account.css'
 import AddItem from '../../forms/additem/AddItem'
+import EditAccount from '../../forms/editaccount/EditAccount'
 
 const url="https://artpromotion.azurewebsites.net/api/Art/artist/"
 function Account({user}) {
   const [arts,setArts] = useState([])
   const [err,setErr]= useState(null)
   const [addClass, setAddClass]=useState('add-none')
+  const [editClass, setEditClass]=useState('edit-none')
   useEffect(
     ()=>{
       axios.get(`${url}${user.id}`).then(res=>setArts(res.data)).catch(er=>setErr(er))
@@ -34,7 +36,7 @@ function Account({user}) {
           <div className="location">
             <span>Location:</span><span>{user.location}</span>
           </div>
-          <div>   <button>EDIT ACCOUNT</button></div>
+          <div>   <button onClick={()=>{setEditClass('account-edit')}}>EDIT ACCOUNT</button></div>
         </div>
         <AccSocial/>
         
@@ -66,6 +68,16 @@ function Account({user}) {
         <AddItem uid={user.id}/>
         
       </div>
+      <div className={editClass}>
+        <div className='edit-content'>
+        <div className="closeform"><span onClick={()=>{setEditClass('edit-none')}} >X</span></div>
+        <EditAccount user={user}/>
+
+        </div>
+
+      </div>
+
+
     </div>
   )
 }
