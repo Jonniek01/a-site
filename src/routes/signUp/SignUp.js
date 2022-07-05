@@ -76,12 +76,13 @@ const handleSubmit=(e)=>{
 
   return (
     <div className='sign-up'>
-    <div className='message'>{message}</div>
 
       <div className='sign-content'>
 
       <Link to="/" className='signup-head'>ARTSITE</Link>
       <form onSubmit={(e)=>{handleSubmit(e)}}>
+      <div className='message'>{message}</div>
+
         <div>
           <input onChange={handleInputChange} name='name' type="text" placeholder="Name" ></input>
           <input onChange={handleInputChange} name='brand' type="text" placeholder="Brand" ></input>
