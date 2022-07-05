@@ -11,11 +11,17 @@ const url=`https://artpromo.azurewebsites.net/api/Art/${art.id}`
 
   const remove=()=>{
     axios.delete(url).then(res=>{
+      alert("Item deleted sucesfully")
+      window.location.reload();
+
       console.log(res)
 
     })
     .catch(err=>{
       console.log(err)
+      alert("An error occured, please try again")
+      window.location.reload();
+
 
     })
   }
@@ -32,7 +38,7 @@ const url=`https://artpromo.azurewebsites.net/api/Art/${art.id}`
         <button onClick={()=>{setEdit('edit-item')}} >EDIT DETAILS</button><button onClick={()=>remove(url)} >REMOVE</button>
       </div>
       <div className={edit}>
-      <div className="close-add"><p onClick={()=>{setEdit('edit-none')}} >X</p></div>
+      <div className="close-edit"><p onClick={()=>{setEdit('edit-none')}} >X</p></div>
         <EditItem art={art}/>
 
 

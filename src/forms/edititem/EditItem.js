@@ -7,6 +7,7 @@ import axios from 'axios';
 
 function EditItem({art}) {
   const initialValues = {
+    "id":art.id,
       "name": art.name,
       "description": art.description,
       "artistId": art.artistId,
@@ -15,7 +16,7 @@ function EditItem({art}) {
       "artImageUrl":art.artImageUrl
  
 };
-const url = `https://artpromo.azurewebsites.net/api/Art/${art.artistId}`
+const url = `https://artpromo.azurewebsites.net/api/Art/${art.id}`
 
 const [values, setValues] = useState(initialValues);
 const [message, setMessage]=useState("")
@@ -39,33 +40,39 @@ const handleSubmit=(e)=>{
   
   
       setMessage("Form proccessing");
-      if(!image){
-       postData(initialValues.artImageUrl)
+      if(image===null){
+      //  postData(initialValues.artImageUrl)
       }
       else{
-        getSecure()
+        getSecure(image)
     }
   
   
   
     }
 //posting data
-const postData=(s3url)=>{
+const postData=(urlpar)=>{
   let Obj=values;
-  Obj.artImageUrl=s3url;
+  Obj.artImageUrl=urlpar;
   setValues(Obj)
   console.log("to be submited:", values)
   axios.put(url,values).then(
     res=>{
     setDisabled(false);
-    setMessage("PRODUCT ADDED SUCCESFULLY");
+    setMessage("PRODUCT UPDATE SUCESFULL");
+    alert(message)
+
+    
     setValues(initialValues)
+    window.location.reload();
+
 
   })
   .catch(err=>{
     setMessage("An error occured. Check your art details");
     console.log("error",err)
     setDisabled(false)
+    alert(err.toString())
   })
 
 }
@@ -78,6 +85,7 @@ const getSecure=()=>{
 
 }
 const uploadImage=(secureUrl)=>{
+  console.log("Uploading")
   axios.put(secureUrl,image)
   .then(res=>{
     const s3url=secureUrl.split('?')[0];
@@ -123,7 +131,7 @@ const uploadImage=(secureUrl)=>{
       <textarea onChange={handleInputChange} value={values.description}  name="description" rows="5" placeholder='Description...' ></textarea>
 
       </div>
-      <button style={disabled?{opacity:"0.2"}:{opacity:"1"}} disabled={disabled} className='submit' type='submit'>ADD</button>
+      <button style={disabled?{opacity:"0.2"}:{opacity:"1"}} disabled={disabled} className='submit' type='submit'>CONTINUE</button>
     </form>
   )
 }

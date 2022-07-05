@@ -6,10 +6,7 @@
     -moz-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
     transition: all 0.5s;
 }
-.acc-art:hover{
-    opacity: 0.8;
 
-}
 .acc-art img{
     max-width: 600px;
 }

@@ -14,10 +14,12 @@
     position: fixed;
     height: 100vh;
     width: 100vw;
+    color: #000;
     background-color: rgba(0, 0, 0, 0.774);
 }
-.edit-item form{
-    background-color: rgb(218, 240, 240);
+.edit-item form{   
+
+    background-color: rgb(251, 255, 255);
     top: 25vh;
     left: 25vw;
     flex-direction: column;
@@ -30,13 +32,13 @@
     text-align: left;
     margin-left: 20%;
     padding: 1%;
-    color: rgb(128, 10, 55);
+    color: white;
     font-size: 150%;
     cursor: pointer;
+    font-weight: bold;
 
 }
 .edit-heading{
-    color: rgb(128, 10, 55);
     font-weight: bold;
     font-size: 120%;
 }
@@ -54,7 +56,7 @@
 
 }
 .edit-item form div{
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 

@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios';
 import './EditAccount.css'
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 //PUT https://artpromo.azurewebsites.net/api/Artists/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
 function EditAccount({user}) {
@@ -24,7 +23,6 @@ const [message, setMessage]=useState("")
 const [disabled, setDisabled]=useState(false)
 const [image, setImage]= useState(null)
 
-const navigate=useNavigate()
 
 
 
@@ -56,6 +54,7 @@ const getSecure=()=>{
  }
  const uploadImage=(secureUrl)=>{
   axios.put(secureUrl,image)
+  console.log("uploading",image)
   .then(res=>{
     const s3url=secureUrl.split('?')[0];
   setDisabled(false);

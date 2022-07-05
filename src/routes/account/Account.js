@@ -7,7 +7,6 @@ import axios from 'axios'
 import './Account.css'
 import AddItem from '../../forms/additem/AddItem'
 import EditAccount from '../../forms/editaccount/EditAccount'
-import { useNavigate } from 'react-router-dom';
 
 
 const url="https://artpromo.azurewebsites.net/api/Art/artist/"
@@ -16,7 +15,6 @@ function Account({user}) {
   const [err,setErr]= useState(null)
   const [addClass, setAddClass]=useState('add-none')
   const [editClass, setEditClass]=useState('edit-none')
-  const navigate=useNavigate()
 
   useEffect(
     ()=>{
