@@ -38,7 +38,7 @@ function Account({user}) {
           </div>
           <div>   <button onClick={()=>{setEditClass('account-edit')}}>EDIT ACCOUNT</button></div>
         </div>
-        <AccSocial/>
+        <AccSocial uid={user.id}/>
         
       </div>
       <div className='acc-header'>

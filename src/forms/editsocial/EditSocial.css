@@ -1,0 +1,26 @@
+.social-none{
+    display: none;
+}
+.social-form{
+    display: flex;
+    position: fixed;
+    background: blue;
+    top: 10vh;
+    right: 10vw;
+    height: 40vh;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -webkit-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    -moz-box-shadow: 0px 1px 14px 12px rgba(0,0,0,0.91);
+    justify-content: center;
+    align-items: center;
+
+}
+.social-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+}
