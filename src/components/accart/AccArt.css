@@ -13,3 +13,10 @@
 .acc-art img{
     max-width: 600px;
 }
+
+@media only screen and (max-width: 768px) {
+    .acc-art img{
+        max-width: 96vw;
+    }
+    
+}

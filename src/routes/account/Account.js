@@ -7,6 +7,8 @@ import axios from 'axios'
 import './Account.css'
 import AddItem from '../../forms/additem/AddItem'
 import EditAccount from '../../forms/editaccount/EditAccount'
+import { useNavigate } from 'react-router-dom';
+
 
 const url="https://artpromo.azurewebsites.net/api/Art/artist/"
 function Account({user}) {
@@ -14,11 +16,17 @@ function Account({user}) {
   const [err,setErr]= useState(null)
   const [addClass, setAddClass]=useState('add-none')
   const [editClass, setEditClass]=useState('edit-none')
+  const navigate=useNavigate()
+
   useEffect(
     ()=>{
       axios.get(`${url}${user.id}`).then(res=>setArts(res.data)).catch(er=>setErr(er))
     },[user]
   )
+  const logout=()=>{
+    localStorage.removeItem("user");
+    window.location.reload();
+  }
   return (
     <div className='account'>
       <div className='user-details'>
@@ -36,7 +44,7 @@ function Account({user}) {
           <div className="location">
             <span>Location:</span><span>{user.location}</span>
           </div>
-          <div>   <button onClick={()=>{setEditClass('account-edit')}}>EDIT ACCOUNT</button></div>
+          <div>   <button onClick={()=>{setEditClass('account-edit')}}>EDIT ACCOUNT</button><button onClick={logout} >log out</button></div>
         </div>
         <AccSocial uid={user.id}/>
         

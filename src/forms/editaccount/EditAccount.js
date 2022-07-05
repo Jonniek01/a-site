@@ -79,6 +79,8 @@ const putData=(s3url)=>{
     localStorage.setItem('user', JSON.stringify(values))
 
     setValues(initialValues)
+    window.location.reload();
+
 
   })
   .catch(err=>{

@@ -1,0 +1,18 @@
+.about{
+    width: 100vw;
+    height: 100vh;
+    background: 
+    url('https://images.pexels.com/photos/1109354/pexels-photo-1109354.jpeg?cs=srgb&dl=pexels-steve-johnson-1109354.jpg&fm=jpg');
+    background-size: cover;
+  
+    color: white;
+    font-size: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-content{
+    background-color: blue;
+    width: 80%;
+    height: 100%;
+}

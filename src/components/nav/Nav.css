@@ -10,6 +10,9 @@
     gap: 20px;
     font-size: 120%;
     font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 98vw;
 
     
 }
@@ -28,8 +31,39 @@
     transition: all 0.5s;
 }
 .link:hover{
-    opacity: 0.3;
+    opacity: 0.5;
+    color: rgb(157, 248, 37);
+
 }
 .link:active{
     color: blue;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav{
+        height: auto;
+        min-height: 10vh;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        font-size: 120%;
+        font-weight: bold;
+        padding: 20px;
+    
+        
+    }
+    .links{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    
+    }
+    .links .link, .logo{
+        background-color: rgb(157, 248, 37);
+        border-radius: 5px;
+    }
 }

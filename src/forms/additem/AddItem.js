@@ -58,13 +58,18 @@ const postData=(s3url)=>{
   console.log("to be submited:", values)
   axios.post(url,values).then(
     res=>{
+      console.log(res)
     setDisabled(false);
     setMessage("PRODUCT ADDED SUCCESFULLY");
     setValues(initialValues)
+    window.location.reload();
+
 
   })
   .catch(err=>{
     setMessage("An error occured. Check your art details");
+    alert(message)
+
     console.log("error",err)
     setDisabled(false)
   })
