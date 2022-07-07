@@ -6,7 +6,14 @@ function About() {
     <div className='about'>
 
       <div className='about-content'>
-        <div className="heading"> <h2>About</h2></div>
+        <div className="heading">
+           <h2>About</h2>
+
+        
+        
+        </div>
+        <p>Artsite helps artists to showcase their creations to potential customers</p>
+
 
       </div>
     </div>

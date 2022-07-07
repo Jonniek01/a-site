@@ -41,7 +41,7 @@ const handleSubmit=(e)=>{
   
       setMessage("Form proccessing");
       if(image===null){
-      //  postData(initialValues.artImageUrl)
+       postData(initialValues.artImageUrl)
       }
       else{
         getSecure(image)
@@ -52,6 +52,7 @@ const handleSubmit=(e)=>{
     }
 //posting data
 const postData=(urlpar)=>{
+  console.log(urlpar)
   let Obj=values;
   Obj.artImageUrl=urlpar;
   setValues(Obj)
@@ -64,7 +65,7 @@ const postData=(urlpar)=>{
 
     
     setValues(initialValues)
-    window.location.reload();
+    // window.location.reload();
 
 
   })
@@ -88,10 +89,11 @@ const uploadImage=(secureUrl)=>{
   console.log("Uploading")
   axios.put(secureUrl,image)
   .then(res=>{
-    const s3url=secureUrl.split('?')[0];
+    postData(secureUrl.split('?')[0])
+    setImage(null)
+
+
   setDisabled(false);
-  setImage(null)
-  postData(s3url)
 })
 .catch(err=>{setMessage("Image upload failed")})
 

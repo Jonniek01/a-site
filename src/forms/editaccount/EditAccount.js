@@ -41,8 +41,13 @@ const handleSubmit=(e)=>{
 e.preventDefault()
 setDisabled(true)
 setMessage("Form proccessing");
-getSecure()
-  }
+if(image===null){
+  putData(initialValues.artistImageUrl)
+ }
+ else{
+   getSecure(image)
+}
+}
   
   //handling image
 /*Get secure, upload ,return url then call post data*/
@@ -74,7 +79,7 @@ const putData=(s3url)=>{
   axios.put(url,values).then(
     res=>{
     setDisabled(false);
-    setMessage("PRODUCT ADDED SUCCESFULLY");
+    setMessage("UPDATED SUCCESFULLY");
     localStorage.setItem('user', JSON.stringify(values))
 
     setValues(initialValues)
